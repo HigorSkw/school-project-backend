@@ -1,9 +1,11 @@
 from .models import User
+from clubs.models import Club
 from .serializers import UserSerializer
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from .permissions import IsAdmin, IsAuthenticatedOrPost, IsStudent, IsTeacher, IsAccountOwner
 from rest_framework.views import Response, status
+from django.shortcuts import get_object_or_404
 
 
 class UserView(ListCreateAPIView):
@@ -12,6 +14,18 @@ class UserView(ListCreateAPIView):
 
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticatedOrPost]
+
+    def perform_create(self, serializer):
+        if "club" in self.request.data:
+            if self.request.data["type_account"] != "student":
+                return Response(
+                    {"detail": "User is not student"}
+                )
+
+            club_obj = get_object_or_404(
+                Club, pk=self.request.data["club"]
+            )
+            serializer.save(club = club_obj)
 
 
     def get_queryset(self):

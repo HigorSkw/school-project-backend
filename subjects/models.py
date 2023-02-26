@@ -8,4 +8,4 @@ class Subject(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 #  1 : 1 Com Teacher
-    user = models.OneToOneField("users.User", on_delete=models.CASCADE, related_name="teacher")
+    teacher = models.OneToOneField("users.User", on_delete=models.CASCADE, related_name="teacher")

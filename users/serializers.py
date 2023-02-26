@@ -1,9 +1,12 @@
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
-from .models import User
+from .models import User, typeOptions
+from clubs.serializers import ClubSerializer
 
 
 class UserSerializer(serializers.ModelSerializer):
+    # club = ClubSerializer(read_only=True)
+
     class Meta:
         model = User
         fields = [
@@ -15,15 +18,17 @@ class UserSerializer(serializers.ModelSerializer):
             "is_adm",
             "created_at",
             "updated_at",
+            "club"
         ]
-
-        read_only_fields = ["id", "created_at", "updated_at"]
-        extra_kwargs = {"password": {"write_only": True}}
-
-
-    def create(self, validated_data: dict) -> User:
+        depth=1
         
-        return User.objects.create_superuser(**validated_data)
+        type_account = serializers.ChoiceField(
+            choices=typeOptions.choices
+        )
+        
+
+        read_only_fields = ["id", "created_at", "updated_at", "club"]
+        extra_kwargs = {"password": {"write_only": True}}
 
 
     def create(self, validated_data: dict) -> User:
