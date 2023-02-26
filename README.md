@@ -1,1 +1,1 @@
-# scholl-projcet-fullstack
+# school-project-fullstack
