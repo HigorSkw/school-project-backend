@@ -16,12 +16,12 @@ source venv/bin/activate
 .\venv\Scripts\activate
 ```
 
-3. Fazer a instalação das dependências
+3. Faça a instalação das dependências
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Criar um arquivo .env utilizando o .env de exemplo é preencher as informações.
+4. Crie um arquivo .env utilizando o .env de exemplo é preencher as informações.
 
 A documentação da API se encontra no seguinte URL:
 http://127.0.0.1:8000/api/docs/
