@@ -20,7 +20,6 @@ class ClubSerializer(serializers.Serializer):
         newClub.subjects.set(subjects_data)
         return newClub
         
-
     def update(self, instance, validated_data):
         instance.name = validated_data.get("name", instance.name)
         instance.year = validated_data.get("year", instance.year)
@@ -30,7 +29,3 @@ class ClubSerializer(serializers.Serializer):
             instance.subjects.set(subjects_data)
         instance.save()
         return instance
-
-
-
-

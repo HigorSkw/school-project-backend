@@ -24,5 +24,3 @@ class GradeSerializer(serializers.Serializer):
         instance.save()
 
         return instance
-
-

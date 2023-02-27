@@ -29,7 +29,7 @@ class GradeView(ListCreateAPIView):
             Subject, pk=self.request.data["subject"]
         )
         serializer.save(student=student_obj, subject=subject_obj)
-    
+
 
 class GradeDetailView(RetrieveUpdateDestroyAPIView):
     authentication_classes = [JWTAuthentication]

@@ -25,14 +25,16 @@ class UserView(ListCreateAPIView):
             club_obj = get_object_or_404(
                 Club, pk=self.request.data["club"]
             )
-            serializer.save(club = club_obj)
-
+            serializer.save(club=club_obj)
+        
+        return serializer.save()
 
     def get_queryset(self):
         if self.request.user.is_adm:
             return self.queryset.all()
 
         return self.queryset.filter(email=self.request.user.email)
+
 
 class UserDetailView(RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
