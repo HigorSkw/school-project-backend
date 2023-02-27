@@ -1,10 +1,12 @@
 from django.db import models
 import uuid
 
+
 class typeOptions(models.TextChoices):
     MORNING = "morning"
     AFTERNOON = "afternoon"
     NIGHT = "night"
+
 
 # Create your models here.
 class Club(models.Model):
@@ -17,5 +19,3 @@ class Club(models.Model):
 
 #  N : N - Subjects
     subjects = models.ManyToManyField("subjects.Subject", related_name="subjects")
-
-    

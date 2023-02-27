@@ -17,13 +17,12 @@ class SubjectSimpleView(ListAPIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
 
-
     def get_queryset(self):
         if self.request.user.is_adm:
             return self.queryset.all()
 
         return self.queryset.filter(email=self.request.user.email)
-    
+
 
 class SubjectView(ListCreateAPIView):
     queryset = Subject.objects.all()
@@ -44,10 +43,9 @@ class SubjectView(ListCreateAPIView):
                 {"message": "Invalid user type"},
                 status=status.HTTP_400_BAD_REQUEST,
             )
-        
 
-        return serializer.save(teacher = teacher_obj)
-    
+        return serializer.save(teacher=teacher_obj)
+
 
 class SubjectDetailView(RetrieveUpdateDestroyAPIView):
     authentication_classes = [JWTAuthentication]

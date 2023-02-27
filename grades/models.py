@@ -2,6 +2,7 @@ from django.db import models
 import uuid
 from django.core.validators import MinValueValidator, MaxValueValidator
 
+
 class Grade(models.Model):
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
 
