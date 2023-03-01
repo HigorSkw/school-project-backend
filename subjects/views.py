@@ -49,7 +49,7 @@ class SubjectView(ListCreateAPIView):
 
 class SubjectDetailView(RetrieveUpdateDestroyAPIView):
     authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAdminOrSubjectOwner]
+    permission_classes = [IsAdmin]
 
     serializer_class = SubjectSerializer
     queryset = Subject.objects.all()
