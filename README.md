@@ -1,4 +1,4 @@
-## Desafio - Gerenciador de Escola
+## Desafio - Gerenciador de Escola - Backend
 
 - Para iniciar a aplicação, é necessário realizar os seguintes passos
 
