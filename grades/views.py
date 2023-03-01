@@ -1,7 +1,7 @@
 from .models import Grade
 from .serializers import GradeSerializer
 from rest_framework_simplejwt.authentication import JWTAuthentication
-from rest_framework.permissions import IsAuthenticatedOrReadOnly, AllowAny
+from rest_framework.permissions import AllowAny
 from users.permissions import IsTeacher, IsAdmin
 from django.shortcuts import get_object_or_404
 from users.models import User

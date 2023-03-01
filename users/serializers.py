@@ -1,11 +1,8 @@
 from rest_framework import serializers
-from rest_framework.validators import UniqueValidator
 from .models import User, typeOptions
-from clubs.serializers import ClubSerializer
 
 
 class UserSerializer(serializers.ModelSerializer):
-    # club = ClubSerializer(read_only=True)
 
     class Meta:
         model = User

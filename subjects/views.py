@@ -4,7 +4,6 @@ from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIV
 from .models import Subject
 from users.models import User
 from .serializers import SubjectSerializer
-from .permissions import IsAdminOrSubjectOwner
 from users.permissions import IsAdmin, IsTeacher
 from django.shortcuts import get_object_or_404
 from rest_framework.views import Response, status

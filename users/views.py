@@ -3,7 +3,7 @@ from clubs.models import Club
 from .serializers import UserSerializer
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework_simplejwt.authentication import JWTAuthentication
-from .permissions import IsAdmin, IsAuthenticatedOrPost, IsStudent, IsTeacher, IsAccountOwner
+from .permissions import IsAdmin, IsAuthenticatedOrPost, IsAccountOwner
 from rest_framework.views import Response, status
 from django.shortcuts import get_object_or_404
 

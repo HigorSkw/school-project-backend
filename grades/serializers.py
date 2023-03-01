@@ -8,7 +8,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 class GradeSerializer(serializers.Serializer):
     id = serializers.UUIDField(read_only=True)
-    note = serializers.DecimalField(max_digits=2, decimal_places=1, validators=[MinValueValidator(0), MaxValueValidator(10)])
+    note = serializers.DecimalField(max_digits=3, decimal_places=1, validators=[MinValueValidator(0), MaxValueValidator(10)])
     student = UserSerializer(read_only=True)
     subject = SubjectSerializer(read_only=True)
     created_at = serializers.DateTimeField(read_only=True)
