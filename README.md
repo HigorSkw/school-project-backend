@@ -32,5 +32,8 @@ pip install -r requirements.txt
 A documentação da API se encontra no seguinte URL:
 http://127.0.0.1:8000/api/docs/
 
+Obs: Possui um template pronto do Insomnia, basta importar o arquivo a seguir dentro do seu Insomnia:
+Insomnia_Backend_template.json
+
 - Diagrama de entidades da aplicação:
 - <img src="./Diagrama-Escola.png" >
